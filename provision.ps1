@@ -1,8 +1,3 @@
-function Set-LabArtifacts {
-    $ProgressPreference = 'SilentlyContinue' # Ignore progress updates (100X speedup)
-    Invoke-WebRequest -Uri "https://packages.chef.io/files/stable/chefdk/2.0.26/windows/2016/chefdk-2.0.26-1-x86.msi" -OutFile C:\Users\student\Desktop\chefdk-2.0.26-1-x86.msi
-}
-
 function Disable-InternetExplorerESC {
     $AdminKey = "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}"
     $UserKey = "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}"
@@ -28,8 +23,6 @@ function Disable-UserAccessControl {
 
 # Disable Windows Defender real-time monitoring
 Set-MpPreference -DisableRealtimeMonitoring $true
-
-Set-LabArtifacts
 
 # Disable Windows update
 Stop-Service -displayname "Windows Update"
